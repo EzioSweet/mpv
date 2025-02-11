@@ -64,7 +64,7 @@ jobs:
           restore-keys: x86_64-windows-msvc-
       - name: Download and extract VapourSynth
         run: |
-          python -m pip insatll VapourSynth
+          python -m pip install VapourSynth
       - name: Verify VapourSynth installation
         run: |
           vspipe --version
