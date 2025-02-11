@@ -31,9 +31,9 @@ on:
 
 jobs:
   win32:
-    runs-on: windows-2019
+    runs-on: windows-2025
     env:
-      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Enterprise"
+      VS: "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise"
       CC: "ccache clang"
       CXX: "ccache clang++"
       CC_LD: "lld"
