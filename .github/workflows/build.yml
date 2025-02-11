@@ -64,8 +64,7 @@ jobs:
           restore-keys: x86_64-windows-msvc-
       - name: Download and extract VapourSynth
         run: |
-          Invoke-WebRequest -Uri "https://github.com/vapoursynth/vapoursynth/releases/download/R69/Install-Portable-VapourSynth-R69.ps1" -OutFile "Install-Portable-VapourSynth-R69.ps1"
-          powershell -ExecutionPolicy Bypass -File "Install-Portable-VapourSynth-R69.ps1"
+          python -m pip insatll VapourSynth
       - name: Verify VapourSynth installation
         run: |
           vspipe --version
