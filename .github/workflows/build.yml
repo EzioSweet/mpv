@@ -62,14 +62,10 @@ jobs:
           path: ${{ env.CCACHE_DIR }}
           key: x86_64-windows-msvc-${{ steps.get_time.outputs.timestamp }}
           restore-keys: x86_64-windows-msvc-
-      - name: Find Python
-        run: |
-          Get-Command python
       - name: Download and extract VapourSynth
         run: |
-          Invoke-WebRequest -Uri "https://github.com/vapoursynth/vapoursynth/releases/download/R69/VapourSynth64-Portable-R69.zip" -OutFile "vapoursynth.zip"
-          Expand-Archive -Path "vapoursynth.zip" -DestinationPath "C:/hostedtoolcache/windows/Python/3.12.8/x64"
-          python -m pip install "C:/hostedtoolcache/windows/Python/3.12.8/x64/wheel/VapourSynth-69-cp312-cp312-win_amd64.whl"
+          Invoke-WebRequest -Uri "https://github.com/vapoursynth/vapoursynth/releases/download/R69/Install-Portable-VapourSynth-R69.ps1" -OutFile "Install-Portable-VapourSynth-R69.ps1"
+          powershell -ExecutionPolicy Bypass -File "Install-Portable-VapourSynth-R69.ps1"
       - name: Verify VapourSynth installation
         run: |
           vspipe --version
