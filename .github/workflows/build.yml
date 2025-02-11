@@ -31,7 +31,7 @@ on:
 
 jobs:
   win32:
-    runs-on: windows-latest
+    runs-on: windows-2019
     env:
       VS: "C:\\Program Files\\Microsoft Visual Studio\\2019\\Enterprise"
       CC: "ccache clang"
