@@ -64,7 +64,7 @@ jobs:
 
       - name: Download and extract VapourSynth
         run: |
-          Invoke-WebRequest -Uri "https://github.com/vapoursynth/vapoursynth/releases/download/R69/VapourSynth64-Portable-R60.zip" -OutFile "vapoursynth.zip"
+          Invoke-WebRequest -Uri "https://github.com/vapoursynth/vapoursynth/releases/download/R69/VapourSynth64-Portable-R69.zip" -OutFile "vapoursynth.zip"
           Expand-Archive -Path "vapoursynth.zip" -DestinationPath "C:/vapoursynth"
           $env:PATH += ";C:/vapoursynth"
           
