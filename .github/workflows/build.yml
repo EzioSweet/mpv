@@ -62,12 +62,16 @@ jobs:
           key: x86_64-windows-msvc-${{ steps.get_time.outputs.timestamp }}
           restore-keys: x86_64-windows-msvc-
 
+      - name: Download and extract VapourSynth
+        run: |
+          Invoke-WebRequest -Uri "https://github.com/vapoursynth/vapoursynth/releases/download/R69/VapourSynth64-Portable-R60.zip" -OutFile "vapoursynth.zip"
+          Expand-Archive -Path "vapoursynth.zip" -DestinationPath "C:/vapoursynth"
+          $env:PATH += ";C:/vapoursynth"
+          
       - name: Install dependencies
         run: |
           python -m pip install meson
           choco install ccache nasm
-          choco install vapoursynth
-          $env:PATH += ";C:/Program Files/VapourSynth"
 
       - name: Update Meson WrapDB
         run: |
